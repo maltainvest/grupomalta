@@ -141,14 +141,14 @@ async function balanceact() {
       $("#tableInvest").append('<th scope="row">' + idtab + '</th>');
       if(Inv.amount[i] != 0 && Inv.active[i] == true) {
         var amount = parseInt(Inv.amount[i]);
-        while(now >= Inv.timePay[i] && Inv.numPay[i] < 5) {
+        while(now >= Inv.timePay[i] && Inv.numPay[i] < 2) {
           // amount = amount * 50 / 1000;
           this.addPay += (amount * 250 / 1000);
           console.log(this.pay);
           Inv.timePay[i] += 120;//60;
           Inv.numPay[i]++;
         }
-        if(now >= Inv.timePay[i] && Inv.numPay[i] == 5) {
+        if(now >= Inv.timePay[i] && Inv.numPay[i] == 2) {
           this.addPay += (amount * 250 / 1000) + amount;
           console.log(amount);
         }
