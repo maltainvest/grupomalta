@@ -83,18 +83,22 @@ async function balanceact() {
   let Inv; 
   let Ref;
     try {
-        let contract = await tronWeb.contract().at(this.contractAddress);
+        // let contract = await tronWeb.contract().at(this.contractAddress);
         //Use send to execute a non-pure or modify smart contract method on a given smart contract that modify or change values on the blockchain.
         //These methods consume resources(bandwidth and energy) to perform as the changes need to be broadcasted out to the network.
         
-        let result = await contract.balanceOf(addresact).call().then(balanceOf => 
-          {
-            var balance = parseInt(balanceOf);
-            //console.log(balance);
-            $("#balances").text(balance/decimals);
-            // console.log('- Output:', output, '\n');
-          });
-          //console.log('result: ', result);
+        await tronWeb.trx.getBalance(addresact).then(result => {
+          this.balance = result/1000000
+          $("#balances").text(this.balance)
+        })
+        // let result = await contract.balanceOf(addresact).call().then(balanceOf => 
+        //   {
+        //   var balance = parseInt(balanceOf);
+        //   //console.log(balance);
+        //   $("#balances").text(balance/decimals);
+        //   // console.log('- Output:', output, '\n');
+        // });
+        //console.log('result: ', result);
     } catch(error) {
         console.error("trigger smart contract error",error)
     }
