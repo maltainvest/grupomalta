@@ -83,7 +83,7 @@ async function balanceact() {
   let Inv; 
   let Ref;
     try {
-        let contract = await tronWeb.contract().at(trc20ContractAddress);
+        let contract = await tronWeb.contract().at(this.contractAddress);
         //Use send to execute a non-pure or modify smart contract method on a given smart contract that modify or change values on the blockchain.
         //These methods consume resources(bandwidth and energy) to perform as the changes need to be broadcasted out to the network.
         
