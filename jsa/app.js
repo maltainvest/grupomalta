@@ -143,13 +143,13 @@ async function balanceact() {
         var amount = parseInt(Inv.amount[i]);
         while(now >= Inv.timePay[i] && Inv.numPay[i] < 5) {
           // amount = amount * 50 / 1000;
-          this.addPay += (amount * 50 / 1000);
+          this.addPay += (amount * 250 / 1000);
           console.log(this.pay);
-          Inv.timePay[i] += 2592000;//60;
+          Inv.timePay[i] += 600;//60;
           Inv.numPay[i]++;
         }
         if(now >= Inv.timePay[i] && Inv.numPay[i] == 5) {
-          this.addPay += (amount * 50 / 1000) + amount;
+          this.addPay += (amount * 250 / 1000) + amount;
           console.log(amount);
         }
         $("#tableInvest").append('<td>' + Inv.amount[i]/decimals + '</td>');
