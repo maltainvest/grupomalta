@@ -145,7 +145,7 @@ async function balanceact() {
           // amount = amount * 50 / 1000;
           this.addPay += (amount * 250 / 1000);
           console.log(this.pay);
-          Inv.timePay[i] += 600;//60;
+          Inv.timePay[i] += 120;//60;
           Inv.numPay[i]++;
         }
         if(now >= Inv.timePay[i] && Inv.numPay[i] == 5) {
