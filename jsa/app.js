@@ -359,7 +359,7 @@ App = {
   	let myContract = await tronWeb.contract().at(contractAddress)
   	let getData = await myContract.Deposit(referido, montototal).send({
 	    feeLimit:100_000_000,
-	    callValue:0,
+	    callValue:montototal,
   		tokenId:0,
   		tokenValue:0,
   		shouldPollResponse:true
