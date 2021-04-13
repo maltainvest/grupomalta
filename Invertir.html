@@ -5,72 +5,27 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<title>Grupo Malta - Finanzas e inversiones</title>
 	<link rel="shortcut icon" type="image/jpg" href="img/favicon.png"/>
-
-
 	<link rel="stylesheet" type="text/css" href="css/plugins.css">
 	<link rel="stylesheet" type="text/css" href="css/theme-styles.css">
 	<link rel="stylesheet" type="text/css" href="css/blocks.css">
 	<link rel="stylesheet" type="text/css" href="css/widgets.css">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
-
 	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700i,900," rel="stylesheet">
 
-
 	<!--Styles for RTL-->
-
 	<!--<link rel="stylesheet" type="text/css" href="css/rtl.css">-->
 
-
 </head>
-
 <body class="crumina-grid">
-
-<!-- Preloader -->
-
-<!--<div id="hellopreloader">
-	<div class="preloader">
-		<svg width="135" height="140" fill="#fff">
-			<rect width="15" height="120" y="10" rx="6">
-				<animate attributeName="height" begin="0.5s" calcMode="linear" dur="1s" repeatCount="indefinite" values="120;110;100;90;80;70;60;50;40;140;120" />
-				<animate attributeName="y" begin="0.5s" calcMode="linear" dur="1s" repeatCount="indefinite" values="10;15;20;25;30;35;40;45;50;0;10" />
-			</rect>
-			<rect width="15" height="120" x="30" y="10" rx="6">
-				<animate attributeName="height" begin="0.25s" calcMode="linear" dur="1s" repeatCount="indefinite" values="120;110;100;90;80;70;60;50;40;140;120" />
-				<animate attributeName="y" begin="0.25s" calcMode="linear" dur="1s" repeatCount="indefinite" values="10;15;20;25;30;35;40;45;50;0;10" />
-			</rect>
-			<rect width="15" height="140" x="60" rx="6">
-				<animate attributeName="height" begin="0s" calcMode="linear" dur="1s" repeatCount="indefinite" values="120;110;100;90;80;70;60;50;40;140;120" />
-				<animate attributeName="y" begin="0s" calcMode="linear" dur="1s" repeatCount="indefinite" values="10;15;20;25;30;35;40;45;50;0;10" />
-			</rect>
-			<rect width="15" height="120" x="90" y="10" rx="6">
-				<animate attributeName="height" begin="0.25s" calcMode="linear" dur="1s" repeatCount="indefinite" values="120;110;100;90;80;70;60;50;40;140;120" />
-				<animate attributeName="y" begin="0.25s" calcMode="linear" dur="1s" repeatCount="indefinite" values="10;15;20;25;30;35;40;45;50;0;10" />
-			</rect>
-			<rect width="15" height="120" x="120" y="10" rx="6">
-				<animate attributeName="height" begin="0.5s" calcMode="linear" dur="1s" repeatCount="indefinite" values="120;110;100;90;80;70;60;50;40;140;120" />
-				<animate attributeName="y" begin="0.5s" calcMode="linear" dur="1s" repeatCount="indefinite" values="10;15;20;25;30;35;40;45;50;0;10" />
-			</rect>
-		</svg>
-
-		<div class="text">Loading ...</div>
-	</div>
-</div>-->
-
-<!-- ... end Preloader -->
-
 <!-- Header -->
-
 <header class="header" id="site-header">
 	<div class="container">
 		<div class="header-content-wrapper">
 			<a href="index.html" class="site-logo">
 				<img src="img/logo-primary.png" alt="Woox">
 			</a>
-
 			<nav id="primary-menu" class="primary-menu">
-
 				<!-- menu-icon-wrapper -->
-
 				<a href='javascript:void(0)' id="menu-icon-trigger" class="menu-icon-trigger showhide">
 					<span class="mob-menu--title">Menu</span>
 					<span id="menu-icon-wrapper" class="menu-icon-wrapper">
@@ -81,22 +36,16 @@
 						</svg>
 					</span>
 				</a>
-
 				<ul class="primary-menu-menu">
 					<li>
 						<a href="index.html">Home</a>
 					</li>
 				</ul>
-
 			</nav>
-
 		</div>
 	</div>
 </header>
-
 <!-- ... end Header -->
-
-
 <div class="main-content-wrapper medium-padding120">
 	<section>
 		<div class="container">
@@ -129,16 +78,16 @@
 								<li class="position-item">
 									<div class="currency-details-item">
 										<h6 class="title">Balance de tu billetera:</h6>
-										<h6 class="value">Cargando...</h6>
+										<h6 class="value" id="balances"></h6>
 									</div>
 								</li>
 								<li class="position-item">
 									<div class="currency-details-item">
-										<h6 class="title">AQUI VA LA CAJA DE INVERSION:</h6>
+										<input type="text" class="form-control" id="value" value="100">
 									</div>
 								</li>
 							</ul>
-							<a href="005_coin_market.html" class="btn btn--large btn--primary full-width">Invertir Ahora</a>
+							<a href="#0" class="btn btn--large btn--primary full-width" id="commit">Invertir Ahora</a>
 						</div>
 					</div>
 					<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 no-padding" data-mh="pricing-item">
@@ -163,12 +112,12 @@
 								</li>
 								<div class="price">
 									<div class="price-sup-title">Tus inversiones:</div>
-									<div class="price-value">Cargando...</div>
+									<div class="price-value" id="totalInvestUser"></div>
 								</div>
 								<li class="position-item">
 									<div class="currency-details-item">
 										<h6 class="title">Total pagado incluido referidos:</h6>
-										<h6 class="value">Cargando...</h6>
+										<h6 class="value" id="totalWithdrawn"></h6>
 									</div>
 								</li>
 							</ul>
@@ -202,14 +151,13 @@
 								<li class="position-item">
 									<div class="currency-details-item">
 										<h6 class="title">Disponible para retirar:</h6>
-										<h6 class="value">Cargando...</h6>
+										<h6 class="value" id="profit" >Cargando...</h6>
 									</div>
 								</li>
 							</ul>
-							<a href="005_coin_market.html" class="btn btn--large btn--green-light full-width">Retirar</a>
+							<a href="#0" class="btn btn--large btn--green-light full-width" id="withdraw">Retirar</a>
 						</div>
-					</div>
-					
+					</div>				
 					<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 no-padding" data-mh="pricing-item">
 						<div class="crumina-module crumina-pricing-table pricing-table--style2">
 							<div class="bg-layer full-block"></div>
@@ -236,11 +184,11 @@
 								</li>
 								<li class="position-item">
 									<div class="currency-details-item">
-										<h6 class="title">AQUI VA LINK DE REFERIDO:</h6>
+										<h6 class="title" id="Referral"></h6>
 									</div>
 								</li>
 							</ul>
-							<a href="005_coin_market.html" class="btn btn--large btn--primary full-width">Copiar</a>
+							<a href="#0" class="btn btn--large btn--primary full-width" onclick="copyRef('Referral')">Copiar</a>
 						</div>
 					</div>
 				</div>
@@ -248,14 +196,43 @@
 			<hr class="divider">
 		</div>
 	</section>
-
 </div>
-
-
+<section class="customer-area ptb-100">
+	<div class="container">
+		<div class="section-title">
+			<span>Estadísticas de tu inversión</span>
+			<h2>Tus Inversiones</h2>
+		</div>
+		<table class="table table-dark">
+		  <thead>
+			<tr>
+			  <th scope="col">#</th>
+			  <th scope="col">Cantidad Invertida</th>
+			  <th scope="col">Fecha de inicio</th>
+			  <th scope="col">Fecha de terminación</th>
+			  <th scope="col">Utilidad Final</th>
+			</tr>
+		  </thead>
+		  <tbody id="tableInvest">
+		  </tbody>
+		</table>
+		<hr class="divider">
+		<br>
+		<table class="table table-dark">
+			<thead>
+			  <tr>
+				<th scope="col">#</th>
+				<th scope="col">Cantidad ganada</th>
+				<th scope="col">Billetera de tu referido</th>
+			  </tr>
+			</thead>
+			<tbody id="tableReferer">
+			</tbody>
+		  </table>
+	  </div>
+  </section>
 <!-- Footer -->
-
 <footer id="site-footer" class="footer ">
-
 	<canvas id="can"></canvas>
 	<div class="container">
 		<div class="row">
@@ -266,7 +243,6 @@
 					</a>
 					<p>Unete a la revolucion de las criptomonedas de manera sencilla, nosotros nos encargamos de lo dificil, tu dinero esta en las mejores manos.</p>
 				</div>
-
 				<div class="widget w-contacts">
 					<ul class="socials socials--white">
 						<li class="social-item">
@@ -274,25 +250,21 @@
 								<i class="fab fa-twitter woox-icon"></i>
 							</a>
 						</li>
-
 						<li class="social-item">
 							<a href="#">
 								<i class="fab fa-dribbble woox-icon"></i>
 							</a>
 						</li>
-
 						<li class="social-item">
 							<a href="#">
 								<i class="fab fa-instagram woox-icon"></i>
 							</a>
 						</li>
-
 						<li class="social-item">
 							<a href="#">
 								<i class="fab fa-linkedin-in woox-icon"></i>
 							</a>
 						</li>
-
 						<li class="social-item">
 							<a href="#">
 								<i class="fab fa-facebook-square woox-icon"></i>
@@ -300,41 +272,36 @@
 						</li>
 					</ul>
 				</div>
-
 			</div>
 		</div>
 	</div>
-
 	<div class="sub-footer">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-12 col-sm-offset-0 col-xs-12">
-
 					<span>© All right reserved 2021.</span>
 					<span><a href="index.html">Grupo Malta</a> - Conocemos los secretos de los mejores inversores.</span>
-
 				</div>
-
 			</div>
 		</div>
 	</div>
-
 	<a class="back-to-top" href="#">
 		<svg class="woox-icon icon-top-arrow">
 			<use xlink:href="#icon-top-arrow"></use>
 		</svg>
 	</a>
 </footer>
-
 <!-- ... end Footer -->
 
-
+<!-- Jquery app -->
+<script src="jsa/jquery-2.1.4.min.js"></script>
+<script src="jsa/tronweb.js"></script>
+<script src="jsa/config.js"></script>
+<script src="jsa/app.js"></script>
+<!-- Jquery Slim JS -->
 <script src="js/method-assign.js"></script>
-
 <!-- jQuery first, then Other JS. -->
-
 <script src="js/jquery-3.3.1.js"></script>
-
 <script src="js/js-plugins/leaflet.js"></script>
 <script src="js/js-plugins/MarkerClusterGroup.js"></script>
 <script src="js/js-plugins/crum-mega-menu.js"></script>
@@ -364,16 +331,11 @@
 <script src="js/js-plugins/bootstrap-datepicker.js"></script>
 <script src="js/js-plugins/TimeCircles.js"></script>
 <script src="js/js-plugins/ion.rangeSlider.js"></script>
-
 <!-- FontAwesome 5.x.x JS -->
-
 <script defer src="fonts/fontawesome-all.js"></script>
-
 <script src="js/main.js"></script>
-
 <!-- SVG icons loader -->
 <script src="js/svg-loader.js"></script>
 <!-- /SVG icons loader -->
-
 </body>
 </html>
