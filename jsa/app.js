@@ -312,7 +312,7 @@ App = {
   		  $("#Referral").text(locat);
   		}
       else{
-        var locat = window.location.hostname+'/grupomalta/Invertir.html?ref='+addresact;
+        var locat = window.location.hostname+'/Invertir.html?ref='+addresact;
         $("#Referral").text(locat);
       }
       // console.log(this.cont);
